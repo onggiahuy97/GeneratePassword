@@ -123,18 +123,25 @@ struct ContentView: View {
     
     private func generateRandomPassword() {
         var finalString = ""
+        
         if isUsingUpperCaseLetter { finalString.append(contentsOf: upperCaseLetters) }
         if isUsingLowerCaseLetter { finalString.append(contentsOf: lowerCaseLetters) }
         if isUsingNumbers { finalString.append(contentsOf: numbersLetter) }
         if isUsingCharacters { finalString.append(contentsOf: charactersLetter) }
+        
         guard !finalString.isEmpty else {
             self.randomPassword = ""
             return
         }
         let arrayString = finalString.map { char in String(char) }
+        
+        // Random string
         finalString = (0..<finalString.count).reduce(into: "") { par, _ in par += arrayString.randomElement()! }
+        
+        // Random password
         let randomCharacters = (0..<Int(length)).map { _ in finalString.randomElement()! }
         let string = String(randomCharacters)
+        
         self.randomPassword = string
     }
 }
