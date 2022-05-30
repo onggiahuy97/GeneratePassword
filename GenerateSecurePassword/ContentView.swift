@@ -39,7 +39,12 @@ struct ContentView: View {
     }()
     
     static let lowerCaseLetterPlaceholder: String = {
-        Self.upperCaseLetterPlaceholder.lowercased()
+        let start = UnicodeScalar("a").value
+        let end = UnicodeScalar("z").value
+        let string = (start...end).reduce(into: "") { partialResult, value in
+            partialResult += String(Character(UnicodeScalar(value)!))
+        }
+        return string
     }()
     
     static let characters: String = "~!@#$%^&*-"
@@ -60,6 +65,8 @@ struct ContentView: View {
     @State private var length: Double = 15
     
     @State private var randomPassword: String = ""
+    
+    @State private var isShowingAlert = false
     
     var body: some View {
         NavigationView {
@@ -98,7 +105,6 @@ struct ContentView: View {
                     Text(randomPassword)
                         .frame(maxWidth: .infinity, alignment: .center)
                     
-                    
                     Button {
                         generateRandomPassword()
                     } label: {
@@ -108,12 +114,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Password")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        UIPasteboard.general.setValue(self.randomPassword, forPasteboardType: "txt.plain-txt")
+                        self.isShowingAlert.toggle()
                     } label: {
                         Label("Copy", systemImage: "doc.on.clipboard")
+                    }
+                    .alert(isPresented: $isShowingAlert) {
+                        Alert(title: Text("Copied!"),
+                              message: Text(self.randomPassword),
+                              dismissButton: .cancel({
+                            UIPasteboard.general.string = self.randomPassword
+                        }))
                     }
                 }
             }
