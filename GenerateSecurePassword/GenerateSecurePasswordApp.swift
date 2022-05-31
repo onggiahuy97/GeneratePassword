@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct GenerateSecurePasswordApp: App {
+    @StateObject var viewModel = PasswordViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
