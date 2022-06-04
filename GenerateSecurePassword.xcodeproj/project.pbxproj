@@ -11,6 +11,7 @@
 		3E30B8CB28412692001E386E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30B8CA28412692001E386E /* ContentView.swift */; };
 		3E30B8CD28412692001E386E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E30B8CC28412692001E386E /* Assets.xcassets */; };
 		3E30B8D028412692001E386E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E30B8CF28412692001E386E /* Preview Assets.xcassets */; };
+		3E7BEA5D284AE86C0039954E /* PasswordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7BEA5C284AE86C0039954E /* PasswordDetailView.swift */; };
 		3EA2A4D5284553810082C7B5 /* PasswordStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA2A4D4284553810082C7B5 /* PasswordStorageView.swift */; };
 		3EA2A4D7284682AE0082C7B5 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA2A4D6284682AE0082C7B5 /* PasswordView.swift */; };
 		3EA2A4D92846C47A0082C7B5 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA2A4D82846C47A0082C7B5 /* PasswordViewModel.swift */; };
@@ -22,6 +23,7 @@
 		3E30B8CA28412692001E386E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E30B8CC28412692001E386E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E30B8CF28412692001E386E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E7BEA5C284AE86C0039954E /* PasswordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetailView.swift; sourceTree = "<group>"; };
 		3EA2A4D4284553810082C7B5 /* PasswordStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStorageView.swift; sourceTree = "<group>"; };
 		3EA2A4D6284682AE0082C7B5 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		3EA2A4D82846C47A0082C7B5 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				3EA2A4D6284682AE0082C7B5 /* PasswordView.swift */,
 				3EA2A4D4284553810082C7B5 /* PasswordStorageView.swift */,
 				3EA2A4D82846C47A0082C7B5 /* PasswordViewModel.swift */,
+				3E7BEA5C284AE86C0039954E /* PasswordDetailView.swift */,
 				3E30B8CC28412692001E386E /* Assets.xcassets */,
 				3E30B8CE28412692001E386E /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7BEA5D284AE86C0039954E /* PasswordDetailView.swift in Sources */,
 				3E30B8CB28412692001E386E /* ContentView.swift in Sources */,
 				3E30B8C928412692001E386E /* GenerateSecurePasswordApp.swift in Sources */,
 				3EA2A4D5284553810082C7B5 /* PasswordStorageView.swift in Sources */,

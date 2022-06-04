@@ -43,6 +43,14 @@ class PasswordViewModel: ObservableObject {
         passwords.remove(atOffsets: indexSet)
         save()
     }
+    
+    func updatePassword(_ password: Password) {
+        if passwords.contains(where: { $0.id == password.id }) {
+            let index = passwords.firstIndex(where: { $0.id == password.id })
+            passwords[index!] = password
+            save()
+        }
+    }
 }
 
 struct Password: Identifiable, Codable {

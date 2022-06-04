@@ -29,15 +29,27 @@ struct PasswordStorageView: View {
     var PasswordList: some View {
         List {
             ForEach(viewModel.passwords) { password in
-                VStack(alignment: .leading) {
-                    Text(password.name)
-                    Text(password.password)
-                        .foregroundColor(.secondary)
-                }
+                PasswordCell(password)
             }
             .onDelete(perform: deletePassword(_:))
         }
         .navigationTitle("Passwords")
+    }
+    
+    func PasswordCell(_ password: Password) -> some View {
+        NavigationLink(destination: PasswordDetailView(password)) {
+            VStack(alignment: .leading) {
+                Text(password.name)
+                Text(password.password)
+                    .foregroundColor(.secondary)
+                if let url = password.url {
+                    Button(url) {
+                        print("Open URL")
+                    }
+                    .foregroundColor(.blue)
+                }
+            }
+        }
     }
     
     func deletePassword(_ indexSet: IndexSet) {
